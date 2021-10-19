@@ -1,0 +1,52 @@
+name: shop_app_num2
+description: A Flutter project.
+
+
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  get: ^4.3.8
+  get_storage: ^2.0.3
+  cupertino_icons: ^1.0.2
+  smooth_page_indicator: ^1.0.0
+  dio: ^4.0.0
+  carousel_slider: ^4.0.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^1.0.0
+
+
+flutter:
+
+  uses-material-design: true
+
+
+  assets:
+    - assets/images/page_one.png
+    - assets/images/page_two.png
+    - assets/images/page_three.png
+    - assets/images/wait_image.jpg
+
+ 
+  fonts:
+    - family: IBM
+      fonts:
+        - asset: assets/fonts/IBMPlexSansArabic-Regular.ttf
+        - asset: assets/fonts/IBMPlexSansArabic-Bold.ttf
+        - asset: assets/fonts/IBMPlexSansArabic-ExtraLight.ttf
+        - asset: assets/fonts/IBMPlexSansArabic-Light.ttf
+        - asset: assets/fonts/IBMPlexSansArabic-Medium.ttf
+        - asset: assets/fonts/IBMPlexSansArabic-SemiBold.ttf
+        - asset: assets/fonts/IBMPlexSansArabic-Thin.ttf
+  
