@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_utils/src/extensions/context_extensions.dart';
 import 'package:shop_app_num2/controller/product_controller.dart';
 import 'package:shop_app_num2/models/home_model.dart';
+import 'package:shop_app_num2/widgets/build_image.dart';
 
 class ProductGridWidget extends StatelessWidget {
   final ProductModel product;
@@ -17,13 +17,11 @@ class ProductGridWidget extends StatelessWidget {
         Stack(
           alignment: AlignmentDirectional.bottomStart,
           children: [
-            FadeInImage(
-              placeholder: AssetImage("assets/images/wait_image.jpg"),
-              image: NetworkImage(
-                product.image!,
-              ),
-              width: double.infinity,
+            BuildImage(
+              imageUrl: product.image!,
               height: 200,
+              width: double.infinity,
+              radius: 0,
             ),
             if (product.old_price != 0)
               Container(

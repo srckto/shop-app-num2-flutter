@@ -15,7 +15,7 @@ class DioHelper {
     );
   }
 
-  static Future getData({
+  static Future<Response> getData({
     required String url,
     Map<String, dynamic>? query,
     String? language,

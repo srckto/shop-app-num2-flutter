@@ -10,14 +10,13 @@ class ChangeFavoriteModel {
   }
 }
 
-class GetFavoriteModel {
+class FavoriteModel {
   bool? status;
   List<FavoriteData> data = [];
 
-  GetFavoriteModel.fromJson(Map<String, dynamic> jsonData) {
+  FavoriteModel.fromJson(Map<String, dynamic> jsonData) {
     status = jsonData["status"];
     jsonData["data"]["data"].forEach((element) {
-      
       data.add(FavoriteData.fromJson(element));
     });
   }

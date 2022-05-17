@@ -1,3 +1,5 @@
+import 'package:shop_app_num2/constant.dart';
+
 class CategoryModel {
   late bool status;
   late List<CategoryDataModel>? data = [];
@@ -20,6 +22,6 @@ class CategoryDataModel {
   CategoryDataModel.fromJson(Map<String, dynamic> jsonData) {
     id = jsonData["id"];
     name = jsonData["name"];
-    image = jsonData["image"];
+    image = jsonData["image"] ?? k_notImage;
   }
 }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shop_app_num2/constant.dart';
 import 'package:shop_app_num2/controller/product_controller.dart';
 import 'package:shop_app_num2/models/home_model.dart';
+import 'package:shop_app_num2/widgets/build_image.dart';
 
 class FavoriteScreen extends StatelessWidget {
   FavoriteScreen({Key? key}) : super(key: key);
@@ -48,18 +50,7 @@ class FavoriteScreen extends StatelessWidget {
       padding: const EdgeInsets.all(20),
       child: Row(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(5),
-            child: FadeInImage(
-              placeholder: AssetImage("assets/images/wait_image.jpg"),
-              image: NetworkImage(
-                model.image!,
-              ),
-              width: 90,
-              height: 90,
-              fit: BoxFit.cover,
-            ),
-          ),
+          BuildImage(imageUrl: model.image!, width: 90, height: 90, radius: 5),
           Expanded(
             child: Column(
               mainAxisSize: MainAxisSize.min,

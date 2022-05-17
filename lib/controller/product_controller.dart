@@ -12,7 +12,7 @@ class ProductController extends GetxController {
   Map<int, bool> favoriteProduct = {};
 
   RxBool state = false.obs;
-  GetFavoriteModel? getFavoriteModel;
+  FavoriteModel? getFavoriteModel;
   RxList allProductFavorite = RxList<ProductModel>([]);
 
   @override
@@ -75,7 +75,7 @@ class ProductController extends GetxController {
     String token = CacheHelper.getData(key: "token");
 
     return await DioHelper.getData(url: GET_FAVORITE_URL, token: token).then((value) {
-      getFavoriteModel = GetFavoriteModel.fromJson(value.data);
+      getFavoriteModel = FavoriteModel.fromJson(value.data);
       List<ProductModel> newList = [];
 
       getFavoriteModel!.data.forEach((element) {

@@ -2,16 +2,17 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shop_app_num2/controller/product_controller.dart';
+import 'package:shop_app_num2/widgets/build_image.dart';
 import 'package:shop_app_num2/widgets/product_grid_widget.dart';
 
-class ProductScreen extends StatefulWidget {
-  ProductScreen({Key? key}) : super(key: key);
+class HomeScreen extends StatefulWidget {
+  HomeScreen({Key? key}) : super(key: key);
 
   @override
-  State<ProductScreen> createState() => _ProductScreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _ProductScreenState extends State<ProductScreen> {
+class _HomeScreenState extends State<HomeScreen> {
   final _productController = Get.put(ProductController());
   // final _categoryController = Get.put(CategoryController());
 
@@ -45,16 +46,11 @@ class _ProductScreenState extends State<ProductScreen> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: FadeInImage(
-                              placeholder: AssetImage("assets/images/wait_image.jpg"),
-                              image: NetworkImage(
-                                element.image!,
-                              ),
-                              width: double.infinity,
-                              fit: BoxFit.cover,
-                            ),
+                          child: BuildImage(
+                            radius: 20,
+                            width: double.infinity,
+                            imageUrl: element.image!,
+                            height: 100,
                           ),
                         ),
                       )
@@ -71,20 +67,6 @@ class _ProductScreenState extends State<ProductScreen> {
                   ),
                 ),
                 SizedBox(height: 10),
-                // Container(
-                //   height: 100,
-                //   padding: EdgeInsets.symmetric(horizontal: 15),
-                //   child: ListView.separated(
-                //     physics: BouncingScrollPhysics(),
-                //     separatorBuilder: (ctx, index) => SizedBox(width: 15),
-                //     scrollDirection: Axis.horizontal,
-                //     // shrinkWrap: true,
-                //     itemCount: _categoryController.categoryModel!.data!.length,
-                //     itemBuilder: (BuildContext context, int index) {
-                //       return Image.network(_categoryController.categoryModel!.data![index].image);
-                //     },
-                //   ),
-                // ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                   child: Text(

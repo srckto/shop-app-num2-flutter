@@ -17,7 +17,11 @@ class _ShopLayoutState extends State<ShopLayout> {
       appBar: AppBar(
         title: Text(ShopLayoutController.item[ShopLayoutController.currentIndex].label),
       ),
-      body: ShopLayoutController.item[ShopLayoutController.currentIndex].screen,
+      // body: ShopLayoutController.item[ShopLayoutController.currentIndex].screen,
+      body: IndexedStack(
+        index: ShopLayoutController.currentIndex,
+        children: ShopLayoutController.item.map((element) => element.screen).toList(),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: ShopLayoutController.currentIndex,
         onTap: (int newValue) {

@@ -7,6 +7,4 @@ class BoardingModel {
     required this.subtitle,
     required this.image,
   });
-
- 
 }

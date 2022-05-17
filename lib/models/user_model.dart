@@ -1,12 +1,12 @@
 class UserData {
-  late int id;
-  late String name;
-  late String email;
-  late String phone;
-  late String image;
-  late int points;
-  late int credit;
-  late String token;
+  late final int id;
+  late final String name;
+  late final String email;
+  late final String phone;
+  late final String image;
+  late final int points;
+  late final int credit;
+  late final String token;
 
   UserData.fromJson(Map<String, dynamic> map) {
     id = map['id'];

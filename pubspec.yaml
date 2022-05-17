@@ -13,12 +13,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  get: ^4.3.8
-  get_storage: ^2.0.3
-  cupertino_icons: ^1.0.2
-  smooth_page_indicator: ^1.0.0
-  dio: ^4.0.0
-  carousel_slider: ^4.0.0
+  get: 4.3.8
+  get_storage: 2.0.3
+  cupertino_icons: 1.0.2
+  smooth_page_indicator: 1.0.0
+  dio: 4.0.0
+  carousel_slider: 4.0.0
 
 
 dev_dependencies:
@@ -33,6 +33,7 @@ flutter:
 
 
   assets:
+    - assets/images/
     - assets/images/page_one.png
     - assets/images/page_two.png
     - assets/images/page_three.png

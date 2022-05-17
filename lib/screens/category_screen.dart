@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shop_app_num2/controller/category_controller.dart';
 import 'package:shop_app_num2/models/category_model.dart';
+import 'package:shop_app_num2/screens/category_details_screen.dart';
+import 'package:shop_app_num2/widgets/build_image.dart';
 
 class CategoryScreen extends StatelessWidget {
   final _categoryController = Get.put(CategoryController());
@@ -33,17 +35,11 @@ class CategoryScreen extends StatelessWidget {
       padding: const EdgeInsets.all(20.0),
       child: Row(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(5),
-            child: FadeInImage(
-              placeholder: AssetImage("assets/images/wait_image.jpg"),
-              image: NetworkImage(
-                model.image,
-              ),
-              width: 90,
-              height: 90,
-              fit: BoxFit.cover,
-            ),
+          BuildImage(
+            imageUrl: model.image,
+            height: 90,
+            width: 90,
+            radius: 5,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -57,7 +53,9 @@ class CategoryScreen extends StatelessWidget {
           ),
           Spacer(),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.to(() => CategoryDetailsScreen(model: model));
+            },
             icon: Icon(Icons.arrow_forward_ios),
           )
         ],
